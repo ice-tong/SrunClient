@@ -21,4 +21,4 @@ python srun.py
 
 # to do
 
-- 定时下线
+- [] 定时下线
