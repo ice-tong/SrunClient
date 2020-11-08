@@ -148,7 +148,7 @@ class SrunClient:
             'password': encrypt_passwd,
             'type': 2, 'n': 117,
             'drop': 0, 'pop': 0,
-            'mbytes': 1024, 'minutes': 0,
+            'mbytes': 0, 'minutes': 0,
             'ac_id': 1
             }
         resp_text = post_func(self.login_url, data=payload, headers=self.headers)
