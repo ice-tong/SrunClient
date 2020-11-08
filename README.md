@@ -14,8 +14,10 @@ class SrunClient:
     headers = {'User-Agent': 'SrunClient {}'.format(name)}
     
 ``` 
-然后运行srun.py
-`python srun.py`
+然后运行srun.py 
+``` shell
+python srun.py
+```
 
 # to do
 
