@@ -138,7 +138,7 @@ class SrunClient:
             self._log('###*** ALREADY ONLINE! ***###')
             return True
         if not self.username or not self.passwd:
-            self._log('###*** LOGIN FAILED! (username and passwd is None) ***###')
+            self._log('###*** LOGIN FAILED! (username or passwd is None) ***###')
             self._log('username and passwd are required! (check username and passwd)')
             return False
         encrypt_passwd = self._encrypt(self.passwd)
