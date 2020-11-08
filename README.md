@@ -3,7 +3,7 @@
 
 # how to use
 更换`srun_ip`为自己学校对应的深澜网关地址
-```
+``` python3
 class SrunClient:
     
     name = 'CUGB'
