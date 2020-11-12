@@ -1,8 +1,6 @@
 import time
-import sys
 
-major_version = sys.version_info.major
-if major_version == 2: input = raw_input
+if bytes is str: input = raw_input
 
 try:
     import requests
