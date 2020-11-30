@@ -15,7 +15,7 @@ class SrunClient:
     
 ``` 
 然后运行srun.py 
-``` shell
+``` 
 [user@host SrunClient]$ python srun.py
 [SrunClient CUGB] ###*** NOT ONLINE! ***###
 ############### Wellcome to Srun Client ###############
