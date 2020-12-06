@@ -1,7 +1,8 @@
 # SrunClient
 简易版深澜命令行客户端，包含登录登出和查询在线信息功能。支持 windows/Linux，python2/3 。
 
-# how to use
+# how to use 
+1. 使用命令行客户端登录登出
 更换`srun_ip`为自己学校对应的深澜网关地址
 ``` python3
 class SrunClient:
@@ -27,6 +28,12 @@ class SrunClient:
 #######################################################
 [SrunClient CUGB] ###*** NOT ONLINE! ***###
 >
+```
+
+2. 掉线自动重连 
+配合`nohup`使用，每隔10分钟检测一次在线情况，不在线则重新登录。
+```python
+nohup python heartbeat.py &
 ```
 
 # to do
