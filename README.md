@@ -3,38 +3,39 @@
 
 # how to use 
 1. 使用命令行客户端登录登出
-更换`srun_ip`为自己学校对应的深澜网关地址
-``` python3
-class SrunClient:
-    
-    name = 'CUGB'
-    srun_ip = '202.204.105.195' # or srun_ip = 'gw.cugb.edu.cn'
+    更换`srun_ip`为自己学校对应的深澜网关地址
+    ``` python3
+    class SrunClient:
 
-    login_url = 'http://{}/cgi-bin/srun_portal'.format(srun_ip)
-    online_url = 'http://{}/cgi-bin/rad_user_info'.format(srun_ip)
-    headers = {'User-Agent': 'SrunClient {}'.format(name)}
-    
-``` 
-然后运行srun.py 
-``` 
-[user@host SrunClient]$ python srun.py
-############### Wellcome to Srun Client ###############
-[1]: show online information
-[2]: set username and passwd
-[3]: login
-[4]: logout
-[h]: show this messages
-[q]: quit
-#######################################################
-[SrunClient CUGB] ###*** NOT ONLINE! ***###
->
-```
+        name = 'CUGB'
+        srun_ip = '202.204.105.195' # or srun_ip = 'gw.cugb.edu.cn'
+
+        login_url = 'http://{}/cgi-bin/srun_portal'.format(srun_ip)
+        online_url = 'http://{}/cgi-bin/rad_user_info'.format(srun_ip)
+        headers = {'User-Agent': 'SrunClient {}'.format(name)}
+
+    ``` 
+    然后运行srun.py 
+    ``` 
+    [user@host SrunClient]$ python srun.py
+    ############### Wellcome to Srun Client ###############
+    [1]: show online information
+    [2]: set username and passwd
+    [3]: login
+    [4]: logout
+    [h]: show this messages
+    [q]: quit
+    #######################################################
+    [SrunClient CUGB] ###*** NOT ONLINE! ***###
+    >
+    ```
 
 2. 掉线自动重连 
-配合`nohup`使用，每隔10分钟检测一次在线情况，不在线则重新登录。
-```python
-nohup python heartbeat.py &
-```
+    配合`nohup`使用，每隔10分钟检测一次在线情况，不在线则重新登录。
+    在`heartbeat.py`中设置好登录账号和密码之后，运行：
+    ```python
+    nohup python heartbeat.py &
+    ```
 
 # to do
 
