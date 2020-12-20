@@ -41,7 +41,7 @@
   `sudo vi /etc/rc.d/rc.local`
   将下列命令填入开机自启文件 /etc/rc.d/rc.local    
   ```
-  nohup python heartbeat.py &
+  nohup python /path/to/heartbeat.py &
   autossh -M 4010 -fCNR 1024:localhost:22 sshr@59.110.48.228
   ```   
 
