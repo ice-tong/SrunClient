@@ -31,11 +31,15 @@
     ```
 
 2. 掉线自动重连 
-    配合`nohup`使用，每隔10分钟检测一次在线情况，不在线则重新登录。
+    配合`nohup`使用，每隔10秒钟检测一次在线情况，不在线则重新登录。
     在`heartbeat.py`中设置好登录账号和密码之后，运行：
     ```shell
     nohup python heartbeat.py &
     ```
+ 
+# Addition
+
+- [SSH反向代理 内网穿透](./sshr_readme.md)
 
 # to do
 
