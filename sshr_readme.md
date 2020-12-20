@@ -33,7 +33,7 @@
 
 4. 设置开机自启  
   将网络在线检测以及autossh反向代理命令添加到开机自启   
-  `sudo vi /etc/rc.d/rc.local`   
+  `sudo vi /etc/rc.d/rc.local`
   将   
   ```
   nohup python heartbeat.py &
