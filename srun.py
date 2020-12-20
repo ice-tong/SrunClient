@@ -68,9 +68,10 @@ class SrunClient:
     online_url = 'http://{}/cgi-bin/rad_user_info'.format(srun_ip)
     headers = {'User-Agent': 'SrunClient {}'.format(name)}
 
-    def __init__(self, username=None, passwd=None):
+    def __init__(self, username=None, passwd=None, print_log=True):
         self.username = username
         self.passwd = passwd
+        self.print_log = print_log
         self.online_info = dict()
         self.check_online()
     
@@ -99,7 +100,8 @@ class SrunClient:
         return encrypt_passwd
     
     def _log(self, msg):
-        print('[SrunClient {}] {}'.format(self.name, msg))
+        if self.print_log:
+            print('[SrunClient {}] {}'.format(self.name, msg))
 
     def check_online(self):
         resp_text = get_func(self.online_url, headers=self.headers)
