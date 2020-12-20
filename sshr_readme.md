@@ -9,36 +9,32 @@
 ## 内网主机A 操作步骤（大概步骤）
 
 1. 确保内网主机一直在线  
-  `nohup python heartbeat.py &` 
+  `nohup python heartbeat.py &`  
   不断检测网络在线情况，防止掉线。 （heartbeat.py中填入登录账户和密码）
 
 2. ssh设置免密登录   
-  `ssh-keygen`
-  `ssh-copy-id B_user@B_host`
+  `ssh-keygen`  
+  `ssh-copy-id B_user@B_host`  
 
 3. 使用autossh反向代理   
   `autossh -M 4010 -fCNR 1024:localhost:22 B_user@B_host`  
-  
-  autossh的作用类似于不挂断的进行ssh连接  
-
+  autossh的作用类似于不挂断的进行ssh连接   
   -M 4010 是设置autossh的监听端口为4010  
-
   -fCNR  
     f 让ssh在后台执行命令  
     C 允许压缩数据  
     N 只进行端口转发，不执行远程指令  
     R 远程主机的端口转发到本地端口 （反向代理）  
     L 本地端口转发到远程主机端口 （正向代理）  
-
   1024:localhost:22  
     1024 远程主机端口  
     22 本地端口 （ssh默认端口） 
 
 
 4. 设置开机自启  
-  将网络在线检测以及autossh反向代理命令添加到开机自启  
-  `sudo vi /etc/rc.d/rc.local`  
-  将  
+  将网络在线检测以及autossh反向代理命令添加到开机自启   
+  `sudo vi /etc/rc.d/rc.local`   
+  将   
   ```
   nohup python heartbeat.py &
   autossh -M 4010 -fCNR 1024:localhost:22 sshr@59.110.48.228
