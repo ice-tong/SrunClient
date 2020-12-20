@@ -1,10 +1,12 @@
 # SSH 反向代理 内网穿透 
 
-- 基本原理  
-  内网主机没有公网ip，在外网中无法直接通过公网ip来连接内网主机。让内网主机向有公网ip的公网外网主机发起ssh请求，并建立起隧道连接，此时外网主机和内网主机有一条通信隧道，便可以通过这条隧道进行ssh连接，而不用知道内网主机的ip。  
+- ### 基本原理  
+  内网主机没有公网ip，在外网中无法直接通过公网ip来连接内网主机。  
+  让内网主机向有公网ip的公网外网主机发起ssh请求，并建立起隧道连接。  
+  此时外网主机和内网主机有一条通信隧道，便可以通过这条隧道进行ssh连接，而不用知道内网主机的ip。  
 
-- *内网主机A* : A_user@A_host  
-- *外网主机B* : B_user@B_host
+- ### *内网主机A* : A_user@A_host  
+- ### *外网主机B* : B_user@B_host
 
 
 ## 内网主机A 操作步骤（大概步骤）
@@ -20,6 +22,7 @@
 3. 使用autossh反向代理   
   `autossh -M 4010 -fCNR 1024:localhost:22 B_user@B_host`  
   autossh的作用类似于不挂断的进行ssh连接   
+  ```
   -M 4010 置autossh的监听端口为4010  
   -fCNR  
     -f 让ssh在后台执行命令  
@@ -30,17 +33,17 @@
   1024:localhost:22  
     1024 远程主机端口  
     22 本地端口 （ssh默认端口） 
+  ```
 
 
 4. 设置开机自启  
   将网络在线检测以及autossh反向代理命令添加到开机自启   
   `sudo vi /etc/rc.d/rc.local`
-  将   
+  将下列命令填入开机自启文件 /etc/rc.d/rc.local    
   ```
   nohup python heartbeat.py &
   autossh -M 4010 -fCNR 1024:localhost:22 sshr@59.110.48.228
   ```   
-  填入 /etc/rc.d/rc.local 中  
 
 ## 外网主机B 操作流程 
 
