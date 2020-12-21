@@ -42,7 +42,7 @@
   将下列命令填入开机自启文件 /etc/rc.d/rc.local    
   ```
   nohup python /path/to/heartbeat.py &
-  autossh -M 4010 -fCNR 1024:localhost:22 sshr@59.110.48.228
+  autossh -M 4010 -fCNR 1024:localhost:22 B_user@B_host
   ```   
 
 ## 外网主机B 操作流程 
