@@ -17,6 +17,7 @@ time_interval = 10 # 10s
 USERNAME = ''
 PASSWD = ''
 
+
 def check_online():
     srun_client = SrunClient(print_log=False)
     if srun_client.check_online(): return
