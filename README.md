@@ -32,9 +32,11 @@
 
 2. 掉线自动重连 
     - 推荐定时任务，定时执行heartbeat.py。   
+        使用crontba添加定时任务
         ```shell
         [user@host SrunClient]$ crontab -e
         ```   
+        将下列命令添加，按`esc`，输入`:wq`退出保存（每分钟执行一次命令）。
         ```
         * * * * * python /path/to/heartbeat.py
         ```
