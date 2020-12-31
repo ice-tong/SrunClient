@@ -119,7 +119,9 @@ class SrunClient:
                 }
             return True
         except Exception as e:
-            raise e
+            print(resp_text)
+            print('Catch `Status Internal Server Error`? The request is frequent!')
+            print(e)
     
     def show_online(self):
         if not self.check_online(): return
