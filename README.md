@@ -32,6 +32,12 @@
 
 2. 掉线自动重连 
     - 推荐定时任务，定时执行heartbeat.py。   
+        ```shell
+        [user@host SrunClient]$ crontab -e
+        ```   
+        ```
+        * * * * * python /path/to/heartbeat.py
+        ```
     - 或配合`nohup`使用，每隔10秒钟检测一次在线情况，不在线则重新登录。在`heartbeat.py`中设置好登录账号和密码之后，运行：
         ```shell
         nohup python heartbeat.py &
