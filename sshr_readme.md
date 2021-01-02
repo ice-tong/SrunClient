@@ -12,6 +12,8 @@
 ## 内网主机A 操作步骤（大概步骤）
 
 1. 确保内网主机一直在线（optional）  
+  设置定时任务执行heartbeat.py  
+  或修改heartbeat.py，循环检测掉线，使用`nohup`执行
   `nohup python heartbeat.py &`  
   不断检测网络在线情况，防止掉线。 （heartbeat.py中填入登录账户和密码）
 
