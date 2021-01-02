@@ -46,7 +46,7 @@
         ```   
         `nohup` 进程有被杀死的风险
  
-# Addition
+# addition
 
 - [SSH反向代理 内网穿透](./sshr_readme.md)
 
