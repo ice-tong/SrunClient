@@ -31,7 +31,7 @@
     ```
 
 2. 掉线自动重连 
-    - 推荐定时任务，定时执行heartbeat.py。   
+    - [*推荐*]定时任务，定时执行heartbeat.py。   
         使用crontba添加定时任务
         ```shell
         [user@host SrunClient]$ crontab -e
