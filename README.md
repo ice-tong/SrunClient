@@ -1,5 +1,5 @@
 # SrunClient
-简易版深澜命令行客户端，包含登录登出和查询在线信息功能。支持 windows/Linux，python2/3 。 包含校园内网服务器反向代理教程。
+简易版深澜命令行客户端，包含登录登出和查询在线信息功能。支持 windows/Linux/?MacOS，python2/3 。 包含校园内网服务器反向代理教程。
 
 # how to use 
 1. 使用命令行客户端登录登出
