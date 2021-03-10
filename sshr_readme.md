@@ -54,7 +54,7 @@
   可以登录到内网主机上。  
 
 -  或者  
-  `ssh -CNL  *:2048:localhost:1024 localhost`  
+  `ssh -fCNL  *:2048:localhost:1024 localhost`  
   将本地的1024端口转发到本地的2048端口  
   如此可实现在任意终端上，通过外网主机B的代理，连接上内网主机A  
   `ssh A_user@B_host -p 2048`  
