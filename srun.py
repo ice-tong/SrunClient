@@ -66,7 +66,8 @@ class SrunClient:
 
     login_url = 'http://{}/cgi-bin/srun_portal'.format(srun_ip)
     online_url = 'http://{}/cgi-bin/rad_user_info'.format(srun_ip)
-    headers = {'User-Agent': 'SrunClient {}'.format(name)}
+    # headers = {'User-Agent': 'SrunClient {}'.format(name)}
+    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36'}
 
     def __init__(self, username=None, passwd=None, print_log=True):
         self.username = username
